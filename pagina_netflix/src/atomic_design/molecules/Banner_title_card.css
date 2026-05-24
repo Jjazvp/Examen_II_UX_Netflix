@@ -1,0 +1,11 @@
+#div_principal{
+    width: 6 rem;
+    padding-left:5%;
+    padding-right:50%;
+    background-color: rgb(0, 0, 0, 0.2);
+    border: 0px;
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
+    mask-image: linear-gradient(to top, black 60%, transparent 100%);
+}
