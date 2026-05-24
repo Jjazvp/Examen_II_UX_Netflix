@@ -1,0 +1,16 @@
+#nav_container{
+    background-color: rgb(0, 0, 0, 0.2);
+    height: 17%;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+#a_font{
+    color: white;
+    font-size: 100%
+}
+
+#logo_netflix{
+    padding-left:20%;
+    height: 80px;
+}
