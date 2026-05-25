@@ -6,7 +6,7 @@ import logo_notifications from "../../images/notification.png";
 function Nav_bar() {
   return (
     <nav className="navbar navbar-expand-lg" id="nav_container">
-      <div className="container-fluid">
+      <div className="container-fluid" id="container">
         <a className="navbar-brand" id="a_logo" href="#">
           <img src={logo_netflix} id="logo_netflix" alt="Netflix Logo" />
         </a>
@@ -23,7 +23,7 @@ function Nav_bar() {
           Browse
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0" id="ul_container">
             <li className="nav-item">
               <a
                 className="nav-link active"
@@ -78,7 +78,6 @@ function Nav_bar() {
           <li className="nav-item">
             <a
               className="nav-link"
-              style={{ fontSize: "25px" }}
               id="a_font"
               href="#"
             >
@@ -133,83 +132,6 @@ function Nav_bar() {
         </ul>
       </div>
     </nav>
-    /*<nav className="navbar navbar-expand-lg " id="nav_container">
-      <div className="container-fluid" id="container">
-        <a className="navbar-brand" href="#">
-          <img src={logo_netflix} id="logo_netflix" alt="Netflix Logo" />
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          id="browse_btn"
-        >
-          Browse
-        </button>
-        <div className="collapse navbar-collapse" id="div_buttons">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0" id="ul_container">
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                id="a_font"
-                aria-current="page"
-                href="#"
-              >
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                Shows
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                Movies
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                Games
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                News & Popular
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                My List
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                Browse by languages
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li className="nav-item">
-              <a type="icon" className="nav-link" id="a_font" href="#">
-                <img src={logo_search} alt="search logo" id="icon_format" />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id="a_font" href="#">
-                Kids
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>*/
   );
 }
 

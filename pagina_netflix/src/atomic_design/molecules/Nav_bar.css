@@ -1,9 +1,13 @@
 #nav_container{
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 40%, transparent 90%);
     height: 17%;
     flex-direction: row;
     display:flex;
     align-items:center;
+    gap: 4%;
+    white-space: nowrap;
+    height: 7vw;
+    min-height: 70px;
 }
 
 #div_buttons{
@@ -11,20 +15,27 @@
 }
 
 #ul_container{
-    gap: 4%;
+    gap: 3%;
 }
 
 #ul_container_profile{
-    margin-right: 20%;
+    padding-right: 3%;
+    gap:7%;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #container{
+    padding-left:4%;
     display: flex;
     flex-direction: row;
     height: 100%;
     width:100%;
     align-items: center;
-    gap: 4%;
+    white-space: nowrap;
 }
 
 #a_font{
@@ -38,15 +49,14 @@
 
 #a_logo{
     display: block;
-    max-width: 100%;
+    min-width: 70px;
+    width: 14vw;
     height: auto;
 }
 
 #logo_netflix{
-    padding-left:20%;
-    height: 9rem;
     object-fit: contain;
-
+    margin-right: 0px;
     display: flex;
     align-items: center;
     max-width: 100%;
@@ -54,10 +64,11 @@
 }
 
 #browse_btn{
-    align-self: left;
     color: white;
     font-weight:700;
     border: none;
+    font-size: 1.2vw;
+    padding-right: 50%;
 }
 
 #browse_btn:hover{
@@ -70,11 +81,12 @@
 
 #icon_format{
     filter: invert(100%);
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 #profile_picture{
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
+    border-radius: 10%;
 }

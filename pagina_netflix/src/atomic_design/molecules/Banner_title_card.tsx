@@ -1,23 +1,28 @@
 import './Banner_title_card.css'
+import logo from '../../images/One-Piece-Logo-PNG-Images.png'
+import play_logo from '../../images/play-logo.png'
+import info_logo from '../../images/information-logo.png'
 
 function Banner_title_card() {
   return (
     <div className="card" id="div_principal">
       <div className="card-body">
-        <img src="https://www.clipartmax.com/png/small/15-151830_free-one-piece-clipart-one-piece-logo-png.png" alt="Free One Piece Clipart"/>
-        <h6 className="card-subtitle mb-2 text-body-secondary">
-          Card subtitle
-        </h6>
+        <img src={logo} alt="title logo"/>
         <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card’s content.
+          Monkey D. Luffy refuses to let anyone or anything stand in the way of his quest to become the king of all pirates. 
+          With a course charted for the treacherous waters of the Grand Line and beyond, this is one captain who'll never give 
+          up until he's claimed the greatest treasure on Earth: the Legendary One Piece!
         </p>
-        <a href="#" className="card-link">
-          Card link
-        </a>
-        <a href="#" className="card-link">
-          Another link
-        </a>
+        <div id="div_btns">
+          <button id="play_btn">
+            <img src={play_logo} id="play_img"/>
+            <p style={{color: 'black'}}>Play</p>
+          </button>
+          <button id="more_info_btn">
+            <img src={info_logo} id="info_img"/>
+            <p>More Info</p>
+          </button>
+        </div>
       </div>
     </div>
   );

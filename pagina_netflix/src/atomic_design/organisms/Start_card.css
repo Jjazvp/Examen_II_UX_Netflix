@@ -1,7 +1,8 @@
 #banner_div{
-    background-image: url("https://a.storyblok.com/f/178900/1920x1080/b86248a9cf/one-piece-elbaph-arc-key-art-wide.png/m/1200x0/filters:quality(95)format(webp)");
-    height: 100%;
+    padding-bottom: 2%;
     background-size: cover;
     display:block;
     width: 100%;
+    background: linear-gradient(to top, rgba(34, 31, 31, 1) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%), url("https://a.storyblok.com/f/178900/1920x1080/b86248a9cf/one-piece-elbaph-arc-key-art-wide.png/m/1200x0/filters:quality(95)format(webp)");
+    background-size: 100% 100%, 100%; 
 }
