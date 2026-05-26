@@ -2,23 +2,87 @@ import "./Nav_bar.css";
 import logo_netflix from "../../images/Netflix-Logo-Streaming-Platform-765.png";
 import logo_search from "../../images/search-interface-symbol.png";
 import logo_notifications from "../../images/notification.png";
+import { useState } from "react";
+
+
+function browseMenu(onMenu : boolean){
+  if(!onMenu)
+    return null;
+
+
+  return(
+    <div id="div_browse_menu"
+      onMouseEnter={() => (onMenu = true)}
+      onMouseLeave={() => (onMenu = false)}
+    >
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0" id="ul_browse_menu">
+          <li className="nav-item">
+            <a
+              className="nav-link active"
+              id="a_browse_menu"
+              aria-current="page"
+              href="#"
+            >
+              Home
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="a_browse_menu" href="#">
+              Shows
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="a_browse_menu" href="#">
+              Movies
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="a_browse_menu" href="#">
+              Games
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="a_browse_menu" href="#">
+              News & Popular
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="a_browse_menu" href="#">
+              My List
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="a_browse_menu" href="#">
+              Browse by languages
+            </a>
+          </li>
+        </ul>
+    </div>
+  );
+}
 
 function Nav_bar() {
+  const [onMenu, setOnMenu] = useState(false);
   return (
     <nav className="navbar navbar-expand-lg" id="nav_container">
-      <div className="container-fluid" id="container">
+      <div 
+        className="container-fluid" 
+        id="container"
+      >
         <a className="navbar-brand" id="a_logo" href="#">
           <img src={logo_netflix} id="logo_netflix" alt="Netflix Logo" />
         </a>
         <button
           className="navbar-toggler nav-link dropdown-toggle"
           type="button"
-          data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo01"
           aria-controls="navbarTogglerDemo01"
           aria-expanded="false"
           aria-label="Toggle navigation"
           id="browse_btn"
+          onMouseEnter={()=>setOnMenu(true)}
+          onMouseLeave={()=>setOnMenu(false)}
+          onClick={()=>setOnMenu(!onMenu)}
         >
           Browse
         </button>
@@ -76,11 +140,7 @@ function Nav_bar() {
             </a>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              id="a_font"
-              href="#"
-            >
+            <a className="nav-link" id="a_font" href="#">
               Kids
             </a>
           </li>
@@ -131,6 +191,7 @@ function Nav_bar() {
           </li>
         </ul>
       </div>
+      {browseMenu(onMenu)}
     </nav>
   );
 }

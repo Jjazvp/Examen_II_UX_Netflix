@@ -3,6 +3,8 @@
     background-size: cover;
     display:block;
     width: 100%;
-    background: linear-gradient(to top, rgba(34, 31, 31, 1) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%), url("https://a.storyblok.com/f/178900/1920x1080/b86248a9cf/one-piece-elbaph-arc-key-art-wide.png/m/1200x0/filters:quality(95)format(webp)");
-    background-size: 100% 100%, 100%; 
+    /*background: linear-gradient(to top, rgba(34, 31, 31, 1) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%), url("https://a.storyblok.com/f/178900/1920x1080/b86248a9cf/one-piece-elbaph-arc-key-art-wide.png/m/1200x0/filters:quality(95)format(webp)");*/
+    background: linear-gradient(to top, rgba(34, 31, 31, 1) 0%, rgba(0,0,0,0.4) 30%, transparent 100%), url("https://static.animecorner.me/2026/05/1777819839-7f2c8ff026a4f3b4dca98ac7e5a04cbc.png");
+    background-size: 100%; 
+    position: relative;
 }

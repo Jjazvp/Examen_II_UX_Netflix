@@ -8,6 +8,8 @@
     white-space: nowrap;
     height: 7vw;
     min-height: 70px;
+    padding-top: 0%;
+    padding-bottom: 0%;
 }
 
 #div_buttons{
@@ -26,10 +28,12 @@
     white-space: nowrap;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    align-items:center;
 }
 
 #container{
-    padding-left:4%;
+    padding-left:3%;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -40,11 +44,12 @@
 
 #a_font{
     color: white;
-    font-size: 1.1vw;
+    font-size: 0.8vw;
     font-weight: 700;
     transition: color 0.3s ease;
     display: inline-block;
     white-space: nowrap;
+    min-inline-size: 0%;
 }
 
 #a_logo{
@@ -68,11 +73,12 @@
     font-weight:700;
     border: none;
     font-size: 1.2vw;
-    padding-right: 50%;
+    margin-right: 44%;
+    height: 100%;
 }
 
-#browse_btn:hover{
-
+#browse_btn:active{
+    border-width: 0px;
 }
 
 #a_font:hover{
@@ -86,7 +92,36 @@
 }
 
 #profile_picture{
-    width: 24px;
-    height: 24px;
+    width: 33px;
+    height: 33px;
     border-radius: 10%;
+}
+
+#div_browse_menu{
+    margin-left: 3%;
+    background-color: rgba(34, 31, 31, 0.96);
+    z-index: 1;
+    width: 50%;
+    border-top: 3px solid white;
+}
+
+#ul_browse_menu{
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#a_browse_menu{
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+    min-inline-size: 0%;
+    height: 100%;
+}
+
+#a_browse_menu:hover{
+    background-color: rgb(68, 68, 68);
 }
