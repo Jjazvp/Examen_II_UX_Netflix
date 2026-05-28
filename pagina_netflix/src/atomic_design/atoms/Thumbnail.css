@@ -1,0 +1,17 @@
+:root {
+    --card-width: 250px;
+    --card-height: 150px;
+}
+
+.thumbnail-container {
+    min-width: var(--card-width);
+    height: var(--card-height);
+    cursor: pointer;
+}
+
+.thumbnail-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+}
