@@ -64,7 +64,7 @@ function browseMenu(onMenu : boolean){
 function Nav_bar() {
   const [onMenu, setOnMenu] = useState(false);
   return (
-    <nav className="navbar navbar-expand-lg" id="nav_container">
+    <nav className="navbar navbar-expand-lg fixed-top" id="nav_container">
       <div 
         className="container-fluid" 
         id="container"
