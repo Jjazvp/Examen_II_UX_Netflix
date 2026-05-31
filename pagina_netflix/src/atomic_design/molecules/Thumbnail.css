@@ -72,3 +72,32 @@
 .hover-info-genres {
     padding: 7px;
 }
+
+.thumbnail-container.top-10-item {
+    height: calc(var(--card-height) + 25px);;
+    display: flex;
+    align-items: center;
+}
+
+.rank-number {
+    position: absolute;
+    left: -5px;
+    bottom: -15px; 
+    font-size: 220px; 
+    font-weight: 800;
+    line-height: 1;
+    color: black;
+    -webkit-text-stroke: 4px #595959;
+    z-index: 1;
+    letter-spacing: -16px;
+}
+
+.top-10-img {
+    width: 50% !important;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: -5px 0px 15px rgba(0,0,0,0.5);
+}

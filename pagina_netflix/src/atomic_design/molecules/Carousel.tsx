@@ -1,5 +1,5 @@
 import './Carousel.css';
-import Thumbnail, { type tnProps } from '../atoms/Thumbnail.tsx';
+import Thumbnail, { type tnProps } from './Thumbnail.tsx';
 import { useState, useRef } from 'react';
 
 type CarouselProps = {
@@ -42,7 +42,7 @@ export const Carousel =({title, lista}:CarouselProps) => {
                     {lista.map((data, index) => (
                             <Thumbnail key= {index} id= {data.id} title= {data.title} imageUrl= {data.imageUrl} edad={data.edad} 
                             cantidad={data.cantidad} hdBadge={data.hdBadge} genres={data.genres} videoUrl={data.videoUrl} 
-                            progressBar={data.progressBar}
+                            progressBar={data.progressBar} rank={data.rank}
                             />
                     ))}
                 </div>

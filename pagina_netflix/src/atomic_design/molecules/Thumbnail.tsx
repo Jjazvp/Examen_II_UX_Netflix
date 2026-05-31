@@ -6,7 +6,7 @@ import Badge from '../atoms/BadgeHD.tsx';
 import GenreBadge from '../atoms/Genre.tsx';
 import ProgressBar from '../atoms/ProgressBar.tsx';
 import { createPortal } from 'react-dom';
-import Button from '../atoms/Button';
+import Button from '../atoms/Button.tsx';
 import play_logo from '../../images/play-logo.png';
 import like_logo from '../../images/like.png'
 import plus_logo from '../../images/plus.png'
@@ -20,11 +20,12 @@ export type tnProps = {
     cantidad: string;
     hdBadge: string;
     genres: string[];
-    videoUrl?: string;
+    videoUrl?: string | undefined;
     progressBar?: string;
+    rank?: number;
 }
 
-const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoUrl, progressBar}:tnProps) => {
+const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoUrl, progressBar, rank}:tnProps) => {
     const [cardActiva, setCardActiva] = useState<tnProps | null>(null);
     const [posicionHover, setPosicionHover] = useState<{ left: number; width: number; top: number } | null>(null);
     const timeoutRef = useRef<number | null>(null);
@@ -59,11 +60,12 @@ const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoU
 
     return (
         <>
-            <div key= {id} className="thumbnail-container" 
-                onMouseEnter={(e) => handleMouseEnter({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoUrl, progressBar}, e)}
+            <div key= {id} className={`thumbnail-container ${rank ? 'top-10-item':''}`} 
+                onMouseEnter={(e) => handleMouseEnter({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoUrl, progressBar, rank}, e)}
                 onMouseLeave={handleMouseLeave}
             >
-                <img src={imageUrl} alt={title} />
+                {rank && <span className='rank-number'>{rank}</span>}
+                <img src={imageUrl} alt={title} className={rank ? 'top-10-img': ''} />
                 {progressBar && (
                     <ProgressBar cantidad={progressBar}/>
                 )}
@@ -96,7 +98,7 @@ const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoU
                             <Button icon={dropdown_logo}></Button>
                         </div>
                         <div className="hover-info-text">
-                            <Edad edad={edad + '+'} />
+                            <Edad edad={edad} />
                             <Cantidad cantidad={cantidad}/>
                             <Badge HD='HD'/>
                         </div>
