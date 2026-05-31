@@ -228,7 +228,7 @@ function Nav_bar() {
                 alt="profile picture"
                 id="profile_picture"
               />
-              <span className={`profile-chevron ${onSettings ? 'open' : ''}`}>▾</span>
+              <span>▾</span>
             </a>
           </li>
         </ul>

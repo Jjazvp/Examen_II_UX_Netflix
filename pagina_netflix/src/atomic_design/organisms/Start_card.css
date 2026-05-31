@@ -9,7 +9,7 @@
     border: none;
 }
 
-#div_principal{
+#div_principal_start_card{
     display:flex;
     flex-direction: row;
     gap:48%;

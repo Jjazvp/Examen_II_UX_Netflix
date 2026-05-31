@@ -1,9 +1,9 @@
 import './App.css'
-import Start_card from './atomic_design/organisms/Start_card.tsx';
+import Home from './atomic_design/page/Home.tsx';
 
 function App() {
   return(
-      <Start_card/>
+      <Home/>
     )
 }
 

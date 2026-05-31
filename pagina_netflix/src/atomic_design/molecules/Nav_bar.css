@@ -148,24 +148,3 @@
     padding: 9px;
     gap: 6px;
 }
-
-#i_profile_icon{
-    font-size: 20px;
-    color: white;
-}
-
-.profile-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.profile-chevron {
-  color: white;
-  font-size: 0.9rem;
-  transition: transform 0.2s ease;
-}
-
-.profile-chevron.open{
-    transform: rotate(180deg);
-}

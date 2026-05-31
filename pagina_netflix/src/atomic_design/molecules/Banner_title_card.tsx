@@ -5,7 +5,7 @@ import info_logo from '../../images/information-logo.png'
 
 function Banner_title_card() {
   return (
-    <div className="card" id="div_principal">
+    <div className="card" id="div_principal_banner_card">
       <div className="card-body">
         <img src={logo} alt="title logo"/>
         <h2>
