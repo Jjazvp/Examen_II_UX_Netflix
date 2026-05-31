@@ -1,26 +1,37 @@
-#profile_setting_li{
-    display: flex;
-    flex-direction: column;
-    height: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.profile_setting_li{
+    height: 50px;
+    padding: 10px 0px 10px 10px;
+    justify-content: center;
 }
 
-#profile_setting_a{
+.profile_setting_a{
     display: flex;
     flex-direction: row;
-    height: 33px;
+    height: 43px;
     gap: 15px;
+    justify-content: left;
+    text-decoration: none;
 }
 
-#profile_setting_a:hover{
+.profile_setting_li:hover{
     background-color: rgb(103, 103, 103);
+    border-radius: 3%;
 }
 
-#profile_setting_p{
-    size: 1vw;
+.profile_setting_p{
+    font-size: 16px;
+    font-weight: 500;
+    font-style: none;
+    padding-right: 80px;
 }
 
 #profile_setting_img{
     border-radius: 10%;
+    height:22px;
+    width: auto;
+    filter: invert(100%);
+}
+
+#li_sign_out{
+    border-top: 1px solid rgb(54, 54, 54);
 }
