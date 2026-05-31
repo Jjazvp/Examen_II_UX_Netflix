@@ -40,7 +40,10 @@ export const Carousel =({title, lista}:CarouselProps) => {
                 )}
                 <div className="carousel" ref={filaRef} onScroll={handleScroll}>
                     {lista.map((data, index) => (
-                            <Thumbnail key= {index} id= {data.id} title= {data.title} imageUrl= {data.imageUrl} edad={data.edad} cantidad={data.cantidad} hdBadge={data.hdBadge} genres={data.genres} />
+                            <Thumbnail key= {index} id= {data.id} title= {data.title} imageUrl= {data.imageUrl} edad={data.edad} 
+                            cantidad={data.cantidad} hdBadge={data.hdBadge} genres={data.genres} videoUrl={data.videoUrl} 
+                            progressBar={data.progressBar}
+                            />
                     ))}
                 </div>
                 {showRight && (
