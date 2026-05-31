@@ -2,10 +2,15 @@ import "./Nav_bar.css";
 import logo_netflix from "../../images/Netflix-Logo-Streaming-Platform-765.png";
 import logo_search from "../../images/search-interface-symbol.png";
 import logo_notifications from "../../images/notification.png";
+import manage_profile_icon from '../../images/edit-icon.png';
+import transfer_profile_icon from '../../images/transfer-profile-icon.png';
+import profile_icon from '../../images/profile-icon.png';
+import help_icon from '../../images/help-icon.png';
 import { useState } from "react";
 import { useEffect } from 'react';
 import Settings_pill from "./Settings_pill";
-
+import Profile_pill from './Profile_pill';
+import padlock_icon from '../../images/padlock-icon.png';
 
 function browseMenu(onMenu : boolean){
   if(!onMenu)
@@ -67,15 +72,43 @@ function settings(onSettings: boolean){
     return;
 
   return(
-    <ul className="position-absolute top-100 end-0 z-3 list-unstyled m-0 p-2  shadow rounded" id="ul_settings">
-        <Settings_pill 
+    <ul className="position-absolute top-100 rounded z-3 list-unstyled shadow" id="ul_settings">
+        <Profile_pill 
           url_text="https://i.pinimg.com/564x/b2/a0/29/b2a029a6c2757e9d3a09265e3d07d49d.jpg" 
           text="David"
+          href_text="#"
         />
-        <Settings_pill 
+        <Profile_pill 
           url_text="https://characterai.io/i/200/static/avatars/uploaded/2026/2/27/EWeWM4SDVQcNAB8yOUpxbEMRNAVZBLzSSgQiP809IHk.webp?webp=true&anim=0" 
           text="Jonatan"
+          href_text="#"
+          image_location={padlock_icon}
         />
+        <Settings_pill 
+            url_text= {manage_profile_icon} 
+            text="Manage Profiles"
+            href_text="#"
+        />
+        <Settings_pill 
+            url_text= {transfer_profile_icon} 
+            text="Transfer Profile"
+            href_text="#"
+        />
+        <Settings_pill 
+            url_text= {profile_icon} 
+            text="Account"
+            href_text="#"
+        />
+        <Settings_pill 
+            url_text= {help_icon} 
+            text="Help Center"
+            href_text="#"
+        />
+        <li className="profile_setting_li rounded" id="li_sign_out">
+          <a className="profile_setting_a" href="#">
+            <p className="profile_setting_p">Sign out of Netflix</p>
+          </a>
+        </li>
     </ul>
   )
 }
@@ -84,6 +117,7 @@ function Nav_bar() {
   const [onMenu, setOnMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [onSettings, setOnSetting] = useState(false);
+
   useEffect(() => {
     const scroll = () => {
       setScrolled(window.scrollY > 50);
@@ -182,12 +216,10 @@ function Nav_bar() {
               />
             </a>
           </li>
-          <li className="nav-item dropdown">
+          <li>
             <a
-              className="nav-link dropdown-toggle"
+              className="nav-link"
               role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
               id="a_font"
               onClick = {()=>{setOnSetting(!onSettings)}}
             >
@@ -196,6 +228,7 @@ function Nav_bar() {
                 alt="profile picture"
                 id="profile_picture"
               />
+              <span>▾</span>
             </a>
           </li>
         </ul>
