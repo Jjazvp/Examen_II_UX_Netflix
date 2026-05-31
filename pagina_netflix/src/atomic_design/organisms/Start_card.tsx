@@ -3,7 +3,7 @@ import Banner_title_card from '../molecules/Banner_title_card.tsx';
 import './Start_card.css';
 import reload_logo from '../../images/reload-logo.png'
 import { Carousel } from '../molecules/Carousel.tsx';
-import { thumbnailData } from '../data/data.tsx';
+import { thumbnailData, continuarViendo } from '../data/data.tsx';
 
 function Start_card() {
     return (
@@ -21,12 +21,13 @@ function Start_card() {
                 </div>
             </div>
             <div>
-                <Carousel title="Tendencias" lista={thumbnailData}/>
-                <Carousel title="Mas vistos" lista={thumbnailData}/>
-                <Carousel title="Mas vistos" lista={thumbnailData}/>
-                <Carousel title="Mas vistos" lista={thumbnailData}/>
-                <Carousel title="Mas vistos" lista={thumbnailData}/>
-                <Carousel title="Mas vistos" lista={thumbnailData}/>
+                <Carousel title="Nuestra seleccion de hoy para ti" lista={thumbnailData}/>
+                <Carousel title="Continuar viendo" lista={continuarViendo}/>
+                <Carousel title="Lo nuevo en Netflix" lista={thumbnailData}/>
+                <Carousel title="Mi lista" lista={thumbnailData}/>
+                <Carousel title="Top 10 en Honduras" lista={thumbnailData}/>
+                <Carousel title="Solo en Netflix" lista={thumbnailData}/>
+                <Carousel title="Favoritos del publico" lista={thumbnailData}/>
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import Edad from '../atoms/Edad.tsx';
 import Cantidad from '../atoms/Cantidad.tsx';
 import Badge from '../atoms/BadgeHD.tsx';
 import GenreBadge from '../atoms/Genre.tsx';
+import ProgressBar from '../atoms/ProgressBar.tsx';
 import { createPortal } from 'react-dom';
 import Button from '../atoms/Button';
 import play_logo from '../../images/play-logo.png';
@@ -19,9 +20,11 @@ export type tnProps = {
     cantidad: string;
     hdBadge: string;
     genres: string[];
+    videoUrl?: string;
+    progressBar?: string;
 }
 
-const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres}:tnProps) => {
+const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoUrl, progressBar}:tnProps) => {
     const [cardActiva, setCardActiva] = useState<tnProps | null>(null);
     const [posicionHover, setPosicionHover] = useState<{ left: number; width: number; top: number } | null>(null);
     const timeoutRef = useRef<number | null>(null);
@@ -57,10 +60,13 @@ const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres}:tnProp
     return (
         <>
             <div key= {id} className="thumbnail-container" 
-                onMouseEnter={(e) => handleMouseEnter({id, title, imageUrl, edad, cantidad, hdBadge, genres}, e)}
+                onMouseEnter={(e) => handleMouseEnter({id, title, imageUrl, edad, cantidad, hdBadge, genres, videoUrl, progressBar}, e)}
                 onMouseLeave={handleMouseLeave}
             >
                 <img src={imageUrl} alt={title} />
+                {progressBar && (
+                    <ProgressBar cantidad={progressBar}/>
+                )}
             </div>
             {cardActiva && posicionHover && createPortal(
                 <div className='hover-card-container'
@@ -75,7 +81,10 @@ const Thumbnail = ({id, title, imageUrl, edad, cantidad, hdBadge, genres}:tnProp
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className="hover-thumbnail-container">
-                        <img src={imageUrl} alt={title} />
+                        <img src={videoUrl} alt={title} />
+                        {progressBar && (
+                            <ProgressBar cantidad={progressBar}/>
+                        )}
                     </div>
                     <div className="hover-info-container">
                         <div className="hover-info-buttons">
