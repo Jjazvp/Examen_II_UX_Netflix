@@ -113,10 +113,25 @@ function settings(onSettings: boolean){
   )
 }
 
+function showSearchBar(onSearch: boolean){
+  if(!onSearch)
+    return;
+
+  return(
+    <input
+      type="text"
+      placeholder="Titles, people, genres"
+      id="search_input"
+      className="form-control rounded-5"
+    />
+  )
+}
+
 function Nav_bar() {
   const [onMenu, setOnMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [onSettings, setOnSetting] = useState(false);
+  const [onSearch, setOnSearch] = useState(false);
 
   useEffect(() => {
     const scroll = () => {
@@ -193,12 +208,19 @@ function Nav_bar() {
             </li>
           </ul>
         </div>
+        { showSearchBar(onSearch) }
         <ul
           className="navbar-nav me-auto mb-2 mb-lg-0"
           id="ul_container_profile"
         >
           <li className="nav-item">
-            <a type="icon" className="nav-link" id="a_font" href="#">
+            <a 
+              type="icon" 
+              className="nav-link" 
+              id="a_font" 
+              href="#"
+              onClick={()=>setOnSearch(!onSearch)}
+            >
               <img src={logo_search} alt="search logo" id="icon_format" />
             </a>
           </li>

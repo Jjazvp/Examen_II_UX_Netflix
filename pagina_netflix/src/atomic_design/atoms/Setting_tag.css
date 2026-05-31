@@ -3,6 +3,10 @@
     font-size: 0.8vw;
 }
 
+#a_tag:hover{
+  text-decoration: underline white;  
+}
+
 #a_tag{
     text-decoration: none;
     justify-content: left;
