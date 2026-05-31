@@ -1,13 +1,13 @@
 import './Carousel.css';
-import Thumbnail from '../atoms/Thumbnail.tsx';
+import Thumbnail, { type tnProps } from '../atoms/Thumbnail.tsx';
 import { useState, useRef } from 'react';
-import { thumbnailData } from '../data/data.tsx';
 
 type CarouselProps = {
     title?: string;
+    lista: tnProps[];
 }
 
-export const Carousel =({title}:CarouselProps) => {
+export const Carousel =({title, lista}:CarouselProps) => {
     const [showLeft, setShowLeft] = useState<boolean>(false);
     const [showRight, setShowRight] = useState<boolean>(true);
     const filaRef = useRef<HTMLDivElement>(null);
@@ -39,8 +39,8 @@ export const Carousel =({title}:CarouselProps) => {
                     <button className='carousel-arrow carousel-arrow-left' onClick={() => scroll('left')}> &#x2039; </button>
                 )}
                 <div className="carousel" ref={filaRef} onScroll={handleScroll}>
-                    {thumbnailData.map((data, index) => (
-                        <Thumbnail key= {index} title= {data.title} imageUrl= {data.imageUrl}/>
+                    {lista.map((data, index) => (
+                            <Thumbnail key= {index} id= {data.id} title= {data.title} imageUrl= {data.imageUrl} edad={data.edad} cantidad={data.cantidad} hdBadge={data.hdBadge} genres={data.genres} />
                     ))}
                 </div>
                 {showRight && (

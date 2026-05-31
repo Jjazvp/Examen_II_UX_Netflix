@@ -1,10 +1,58 @@
 #banner_div{
-    padding-bottom: 2%;
-    background-size: cover;
-    display:block;
+    padding-bottom: 5%;
+    display:flex;
     width: 100%;
     /*background: linear-gradient(to top, rgba(34, 31, 31, 1) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%), url("https://a.storyblok.com/f/178900/1920x1080/b86248a9cf/one-piece-elbaph-arc-key-art-wide.png/m/1200x0/filters:quality(95)format(webp)");*/
     background: linear-gradient(to top, rgba(34, 31, 31, 1) 0%, rgba(0,0,0,0.4) 30%, transparent 100%), url("https://static.animecorner.me/2026/05/1777819839-7f2c8ff026a4f3b4dca98ac7e5a04cbc.png");
     background-size: 100%; 
     position: relative;
+    border: none;
+}
+
+#div_principal{
+    display:flex;
+    flex-direction: row;
+    gap:48%;
+}
+
+#banner_options_div{
+    justify-content: right;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    height: 2vw;
+    padding-top: 37%;
+    align-items: center;
+}
+
+#age_res_div{
+    background-color: rgba(34, 31, 31, 0.5);
+    border-left: 3px solid white;
+    width: 3.5vw;
+    height: 2.7vw;
+    padding-right: 110%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10%;
+}
+
+#reload_div:hover{
+    background-color:rgba(34, 31, 31, 0.3);
+}
+
+#p_age{
+    font-weight: 450;
+    padding-left: 30%;
+}
+
+.img{
+    filter: invert(100%);
+    height: 2.7vw;
+    width: auto;
+}
+
+.img:hover{
+    background-color: rgba(221, 224, 252, 1);
+    border-radius: 50%;
 }

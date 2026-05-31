@@ -17,10 +17,13 @@
   flex-direction: row;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  scrollbar-width: none;
   padding: 0 50px;
   gap: 8px;
   width: 100%;
+}
+
+.carousel::-webkit-scrollbar{
+  display: none;
 }
 
 .carousel-container {

@@ -1,0 +1,26 @@
+#profile_setting_li{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#profile_setting_a{
+    display: flex;
+    flex-direction: row;
+    height: 33px;
+    gap: 15px;
+}
+
+#profile_setting_a:hover{
+    background-color: rgb(103, 103, 103);
+}
+
+#profile_setting_p{
+    size: 1vw;
+}
+
+#profile_setting_img{
+    border-radius: 10%;
+}
