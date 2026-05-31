@@ -3,12 +3,13 @@ import logo_netflix from "../../images/Netflix-Logo-Streaming-Platform-765.png";
 import logo_search from "../../images/search-interface-symbol.png";
 import logo_notifications from "../../images/notification.png";
 import { useState } from "react";
+import { useEffect } from 'react';
+import Settings_pill from "./Settings_pill";
 
 
 function browseMenu(onMenu : boolean){
   if(!onMenu)
     return null;
-
 
   return(
     <div id="div_browse_menu"
@@ -61,10 +62,38 @@ function browseMenu(onMenu : boolean){
   );
 }
 
+function settings(onSettings: boolean){
+  if(!onSettings)
+    return;
+
+  return(
+    <ul className="position-absolute top-100 end-0 z-3 list-unstyled m-0 p-2  shadow rounded" id="ul_settings">
+        <Settings_pill 
+          url_text="https://i.pinimg.com/564x/b2/a0/29/b2a029a6c2757e9d3a09265e3d07d49d.jpg" 
+          text="David"
+        />
+        <Settings_pill 
+          url_text="https://characterai.io/i/200/static/avatars/uploaded/2026/2/27/EWeWM4SDVQcNAB8yOUpxbEMRNAVZBLzSSgQiP809IHk.webp?webp=true&anim=0" 
+          text="Jonatan"
+        />
+    </ul>
+  )
+}
+
 function Nav_bar() {
   const [onMenu, setOnMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [onSettings, setOnSetting] = useState(false);
+  useEffect(() => {
+    const scroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', scroll);
+    return () => window.removeEventListener('scroll', scroll);
+  }, []);
+
   return (
-    <nav className="navbar navbar-expand-lg fixed-top" id="nav_container">
+    <nav className="navbar navbar-expand-lg fixed-top" id={scrolled? 'nav_scrolled' : 'nav_container'}>
       <div 
         className="container-fluid" 
         id="container"
@@ -156,11 +185,11 @@ function Nav_bar() {
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
-              href="#"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               id="a_font"
+              onClick = {()=>{setOnSetting(!onSettings)}}
             >
               <img
                 src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg"
@@ -168,30 +197,11 @@ function Nav_bar() {
                 id="profile_picture"
               />
             </a>
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </div>
       {browseMenu(onMenu)}
+      {settings(onSettings)}
     </nav>
   );
 }

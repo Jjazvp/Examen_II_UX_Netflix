@@ -6,8 +6,19 @@
     align-items:center;
     gap: 4%;
     white-space: nowrap;
-    height: 7vw;
-    min-height: 70px;
+    height: 80px;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+#nav_scrolled{
+    background-color: black;
+    height: 80px;
+    flex-direction: row;
+    display:flex;
+    align-items:center;
+    gap: 4%;
+    white-space: nowrap;
     padding-top: 0%;
     padding-bottom: 0%;
 }
@@ -123,5 +134,12 @@
 }
 
 #a_browse_menu:hover{
-    background-color: rgb(68, 68, 68);
+    background-color: rgb(41, 41, 41);
+}
+
+#ul_settings{
+    background-color: rgb(39, 39, 39);
+    height: auto;
+    width: auto;
+    margin-right: 3%;
 }
